@@ -369,24 +369,15 @@ fi
 
 
 
-read -p "Enter the IP address: " ip
-hostname=$(dig -x $ip +short)
-if [ -z "$hostname" ]; then
-    echo "No reverse DNS record found for $ip"
-else
-    echo "The hostname for $ip is $hostname"
-fi
-
-
 
 #!/usr/bin/ruby
 
-# Get the IP address from the user
+Get the IP address from the user
 print "Enter the IP address to scan: "
 ip_address = gets.chomp
 
-# Run the nmap scan
+Run the nmap scan
 output = `nmap -sV #{ip_address}`
 
-# Print the results
+Print the results
 puts output
