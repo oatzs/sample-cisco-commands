@@ -379,3 +379,14 @@ fi
 
 
 
+#!/usr/bin/ruby
+
+# Get the IP address from the user
+print "Enter the IP address to scan: "
+ip_address = gets.chomp
+
+# Run the nmap scan
+output = `nmap -sV #{ip_address}`
+
+# Print the results
+puts output
